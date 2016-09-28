@@ -40,11 +40,13 @@
     </bean>
   -->
 
+    <!--
     <bean id="triangle" class="com.derinaldis.javabrainsspringtutorial.PointedTriangle">
         <property name="pointA" ref="zeroPoint"/>
         <property name="pointB" ref="point1"/>
         <property name="pointC" ref="point2"/>
     </bean>
+  -->
 
     <bean id="zeroPoint" class="com.derinaldis.javabrainsspringtutorial.Point">
         <property name="x" value="0"/>
@@ -60,4 +62,24 @@
         <property name="x" value="-20"/>
         <property name="y" value="20"/>
     </bean>
+
+    <bean id="old_triangle" class="com.derinaldis.javabrainsspringtutorial.PointedTriangle" name="triangle_orig">
+        <property name="pointA" ref="zeroPoint"/>
+
+        <property name="pointB">
+            <bean class="com.derinaldis.javabrainsspringtutorial.Point">
+                <property name="x" value="0"/>
+                <property name="y" value="-20"/>
+            </bean>
+        </property>
+
+        <property name="pointC">
+            <bean class="com.derinaldis.javabrainsspringtutorial.Point">
+                <property name="x" value="20"/>
+                <property name="y" value="-20"/>
+            </bean>
+        </property>
+    </bean>
+
+    <alias name="old_triangle" alias="triangle"/>
 </beans>
