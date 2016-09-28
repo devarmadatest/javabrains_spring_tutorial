@@ -81,5 +81,21 @@
         </property>
     </bean>
 
-    <alias name="old_triangle" alias="triangle"/>
+    <alias name="old_triangle" alias="aliased_triangle"/>
+
+    <bean id="triangle" class="com.derinaldis.javabrainsspringtutorial.ListPointedTriangle">
+        <property name="points">
+            <list>
+              <ref bean="zeroPoint" />
+                <bean class="com.derinaldis.javabrainsspringtutorial.Point">
+                    <property name="x" value="0"/>
+                    <property name="y" value="-20"/>
+                </bean>
+                <bean class="com.derinaldis.javabrainsspringtutorial.Point">
+                    <property name="x" value="20"/>
+                    <property name="y" value="-20"/>
+                </bean>
+            </list>
+        </property>
+    </bean>
 </beans>
