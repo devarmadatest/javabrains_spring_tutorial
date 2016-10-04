@@ -83,6 +83,7 @@
 
     <alias name="old_triangle" alias="aliased_triangle"/>
 
+    <!--
     <bean id="triangle" class="com.derinaldis.javabrainsspringtutorial.ListPointedTriangle">
         <property name="points">
             <list>
@@ -98,4 +99,23 @@
             </list>
         </property>
     </bean>
+  -->
+
+    <bean id="triangle" class="com.derinaldis.javabrainsspringtutorial.PointedTriangle" autowire="byName"/>
+
+    <bean name="pointA" class="com.derinaldis.javabrainsspringtutorial.Point">
+        <property name="x" value="0"/>
+        <property name="y" value="-20"/>
+    </bean>
+
+    <bean name="pointB" class="com.derinaldis.javabrainsspringtutorial.Point">
+        <property name="x" value="-20"/>
+        <property name="y" value="-20"/>
+    </bean>
+
+    <bean name="pointC" class="com.derinaldis.javabrainsspringtutorial.Point">
+        <property name="x" value="-20"/>
+        <property name="y" value="0"/>
+    </bean>
+
 </beans>
