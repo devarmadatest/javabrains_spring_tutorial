@@ -101,7 +101,13 @@
     </bean>
   -->
 
+    <!--
     <bean id="triangle" class="com.derinaldis.javabrainsspringtutorial.PointedTriangle" autowire="byName"/>
+  -->
+
+    <!--
+    <bean id="triangle" class="com.derinaldis.javabrainsspringtutorial.AwarePointedTriangle" autowire="byName"/>
+  -->
 
     <bean name="pointA" class="com.derinaldis.javabrainsspringtutorial.Point">
         <property name="x" value="0"/>
@@ -116,6 +122,19 @@
     <bean name="pointC" class="com.derinaldis.javabrainsspringtutorial.Point">
         <property name="x" value="-20"/>
         <property name="y" value="0"/>
+    </bean>
+
+    <bean id="parenttriangle" class="com.derinaldis.javabrainsspringtutorial.PointedTriangle">
+        <property name="PointA" ref="pointA"/>
+    </bean>
+
+    <bean id="triangle" class="com.derinaldis.javabrainsspringtutorial.PointedTriangle" parent="parenttriangle">
+        <property name="PointB" ref="pointB"/>
+        <property name="PointC" ref="pointC"/>
+    </bean>
+
+    <bean id="triangle2" class="com.derinaldis.javabrainsspringtutorial.PointedTriangle" parent="parenttriangle">
+        <property name="PointB" ref="pointB"/>
     </bean>
 
 </beans>
