@@ -137,7 +137,7 @@
         <property name="PointB" ref="pointB"/>
     </bean> -->
 
-    <bean id="parenttriangle" class="com.derinaldis.javabrainsspringtutorial.ListPointedTriangle">
+    <!-- <bean id="parenttriangle" class="com.derinaldis.javabrainsspringtutorial.ListPointedTriangle">
         <property name="points">
             <list>
                 <ref bean="pointA"/>
@@ -159,5 +159,12 @@
                 <ref bean="pointB"/>
             </list>
         </property>
+    </bean> -->
+
+    <bean id="triangle" class="com.derinaldis.javabrainsspringtutorial.InitDestroyPointedTriangle" init-method="myInit" destroy-method="myDestroy">
+        <property name="pointA" ref="pointA"/>
+        <property name="pointB" ref="pointB"/>
+        <property name="pointC" ref="pointC"/>
     </bean>
+
 </beans>
